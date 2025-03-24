@@ -13,16 +13,16 @@ function playGame(userChoice) {
     let result  = ''
 
     if(userChoice === computerChoice) {
-        result = `Empate. Ambos jugadores eligieron ${userChoice}`
+        result = `Empate. 😱 Ambos jugadores eligieron ${userChoice}`
     } else if (
         (userChoice === 'piedra' && computerChoice === 'tijera')  ||
         (userChoice === 'papel' && computerChoice === 'piedra')  ||
         (userChoice === 'tijera' && computerChoice === 'papel') 
     )    {
-        result = `Ganaste. ${userChoice} gana a ${computerChoice}`
+        result = `Ganaste. 💪🏻 ${userChoice} gana a ${computerChoice}`
         playerScore++
     } else {
-        result = `Perdiste. ${computerChoice} gana a ${userChoice}`
+        result = `Perdiste. 😟 ${computerChoice} gana a ${userChoice}`
         computerScore++
     }
 
@@ -35,7 +35,7 @@ function playGame(userChoice) {
 }
 
 function endGame() {
-    const finalResult = playerScore === 3 ? '¡Felicidades has ganado! 💪🏻' : 'Ha ganado el enemigo 😱'
+    const finalResult = playerScore === 3 ? '¡Felicidades has ganado! 😎' : 'Ha ganado el enemigo. 😭'
     document.getElementById('result').textContent = finalResult
 
     document.getElementById('btnPiedra').disabled = true
