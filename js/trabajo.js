@@ -42,4 +42,20 @@ function endGame() {
     document.getElementById('btnPapel').disabled = true
     document.getElementById('btnTijera').disabled = true
 
+const Toast = Swal.mixin({
+        toast: true,
+        position: "center-end",
+        showConfirmButton: false,
+        timer: 6000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        imageUrl: "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdpbDU5eDNlY2poOTNudWd4dHJrZG90YTNiM3h2eWJtM2hxdWN4bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7j3UoXzbjvaIo/giphy.gif",
+        title: "¡Juego terminado!",
+      });
 }
+
